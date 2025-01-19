@@ -18,15 +18,18 @@ https://github.com/zju3dv/EfficientLoFTR/assets/69951260/40890d21-180e-4e70-aeba
 
 ## Installation
 ```shell
-conda env create -f environment.yaml
-conda activate eloftr
+pip3 -m venv venv
+source venv/bin/activate
 pip install torch==2.0.0+cu118 --index-url https://download.pytorch.org/whl/cu118
-pip install -r requirements.txt 
+pip install -r requirements.txt
 ```
 The test and training can be downloaded by [download link](https://drive.google.com/drive/folders/1DOcOPZb3-5cWxLqn256AhwUVjBPifhuf?usp=sharing) provided by LoFTR
 
 We provide our pretrained model in [download link](https://drive.google.com/drive/folders/1GOw6iVqsB-f1vmG6rNmdCcgwfB4VZ7_Q?usp=sharing)
 
+**Quickstart**
+- Put model into `weights/eloftr_outdoor.ckpt`
+- Run sample in `notebooks/demo_single_pair.ipynb`
 
 ## Reproduce the testing results with pytorch-lightning
 You need to first set up the testing subsets of ScanNet and MegaDepth. We create symlinks from the previously downloaded datasets to `data/{{dataset}}/test`.
