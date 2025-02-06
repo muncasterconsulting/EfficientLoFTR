@@ -239,7 +239,8 @@ def main():
     (mkpts0, mkpts1, mconf) = run(img0_resized_grey, img1_resized_grey)
 
     # Filter by score
-    i = np.where(mconf > 0.1)
+    thresh = 0.2
+    i = np.where(mconf > thresh)
     mkpts0_filtered = mkpts0[i]  # RGB
     mkpts1_filtered = mkpts1[i]  # Other
 
@@ -259,7 +260,7 @@ def main():
 
     match_name = f'matches_{resize0_split[0]}_{resize1_split[0]}.png'
 
-    draw_matches(img0_resized, img1_resized, mkpts0, mkpts1, mconf, thresh=0.1, output_path=match_name)
+    draw_matches(img0_resized, img1_resized, mkpts0, mkpts1, mconf, thresh=thresh, output_path=match_name)
 
     perspective_config = {
         "corners_src": {

@@ -30,7 +30,7 @@ We provide our pretrained model in [download link](https://drive.google.com/driv
 **Quickstart**
 - Put model into `weights/eloftr_outdoor.ckpt`
 - Run sample in `notebooks/demo_single_pair.ipynb`
-- **MC Additions:** run `scripts/match_and_compute_homography.py`
+- **MC Additions:** run `python match_and_compute_homography.py assets/thermal_visible/ visible-frame-007900.jpg thermal-frame-007900.jpg .`
 
 ## Reproduce the testing results with pytorch-lightning
 You need to first set up the testing subsets of ScanNet and MegaDepth. We create symlinks from the previously downloaded datasets to `data/{{dataset}}/test`.
